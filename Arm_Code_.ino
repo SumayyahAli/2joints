@@ -6,11 +6,11 @@
 
 
 int C;
-int L1=40;
-int L2=20;
+int L1=30;
+int L2=15;
 float Q1,Q2,M;
 float X,Y,q1,q2;
-int Q=60;
+int Q=50;
 #include <Servo.h>
 Servo motor1; 
 Servo motor2;
@@ -51,8 +51,11 @@ if (C==1){
   while (G1==0) { G1=customKeypad.getKey();}
   lcd.setCursor(0,1);
   G1=G1-48;
+  lcd.print(G1);
+  while (G2==0) { G2=customKeypad.getKey();}
+  G2=G2-48;
   lcd.print(G2);
-  delay(1000);
+ delay(1000);
   q1=G1*10+G2;
   lcd.clear();
   lcd.print(" Please Enter angle Q2");
@@ -91,7 +94,7 @@ else if (C==2){
   R2= R2-48;
   lcd.print(R2);
   delay(1000);
-  Y+R1*10+R2;
+  Y=R1*10+R2;
   invers();
 }}
   int FI(){
